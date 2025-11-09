@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 #include "Account.h"
 
 
@@ -15,6 +16,8 @@ int main()
 	while (Is_active)
 	{
 
+		system("cls");
+
 		b.PiggyBankMenu();
 		std::cin >> input;
 
@@ -23,20 +26,30 @@ int main()
 
 		case 1:
 		{
-
+			b.CreateAccount();
 			break;
 		}
+		case 2:
+		{
 
-		   default:
-		   {
-
+			Is_active = false;
 			break;
 
-		   }	
+		}
+		default:
+		{
+
+			std::cout << "Entered wrong input!! Enter any button to continue...";
+			_getch();
+			break;
+
+	    }	
 
 		}
 
 	}
+
+	std::cout << "Thank you for banking with us..oink..oink..." << std::endl;
 	
 
 }
